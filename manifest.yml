@@ -1,0 +1,22 @@
+modules:
+  jira:issuePanel:
+    - key: innoday-forge-hello-world-issue-panel
+      resource: main
+      resolver:
+        function: resolver
+      render: native
+      title: My title
+      icon: https://developer.atlassian.com/platform/forge/images/icons/issue-panel-icon.svg
+  function:
+    - key: resolver
+      handler: index.handler
+resources:
+  - key: main
+    path: src/frontend/index.jsx
+app:
+  runtime:
+    name: nodejs22.x
+  id: ari:cloud:ecosystem::app/ab802626-6454-4ba6-9905-29d4141dfc0e
+permissions:
+  scopes:
+    - read:jira-work
